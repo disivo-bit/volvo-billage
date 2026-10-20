@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- Lägg denna fil på en https-adress du äger (t.ex. GitHub Pages) och registrera
+     den adressen som Redirect URI hos Volvo. Sidan skickar vidare code+state till appen. -->
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volvo Billäge – inloggning</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      box-sizing: border-box;
+      font-family: sans-serif;
+      background: #000;
+      color: #fff;
+      padding: 2em 1.25em;
+      line-height: 1.5;
+      font-size: 1.125rem;
+    }
+    a { color: #8FB8DE; }
+  </style>
+</head>
+<body>
+  <p>Skickar dig tillbaka till appen…</p>
+  <p><a id="l">Tryck här om inget händer</a></p>
+  <script>
+  var target = "se.daniel.volvocar://oauth/callback" + window.location.search;
+  document.getElementById("l").href = target;
+  window.location.replace(target);
+  </script>
+</body>
+</html>

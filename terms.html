@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Use and Privacy for Volvo Billäge</title>
+  <style>
+    body {
+      margin: 0 auto;
+      max-width: 40rem;
+      padding: 1.5rem 1.25rem 3rem;
+      font-family: system-ui, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    h1 { font-size: 1.6rem; line-height: 1.3; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; }
+    a { color: #0b3d91; }
+    ul { padding-left: 1.25rem; }
+    li { margin: 0.45rem 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Terms of Use and Privacy for Volvo Billäge</h1>
+    <p>Applies to the Android app Volvo Billäge (se.daniel.volvocar), version 0.1. Last updated: 20 October 2026. Svensk version: <a href="terms-sv.html">https://disivo-bit.github.io/volvo-billage/terms-sv.html</a></p>
+
+    <h2>Summary</h2>
+    <ul>
+      <li>Volvo Billäge is a private, non-commercial app made by its developer for his own car. It is not sold and is not distributed through any app store.</li>
+      <li>The app reads a few values about your car from Volvo Cars' Connected Vehicle API, after you sign in with your Volvo ID. It only reads. It never sends commands to the car or changes anything in it.</li>
+      <li>Login details and settings are stored encrypted on your phone. Vehicle values are not saved.</li>
+      <li>The app contains no advertising, no analytics and no crash reporting, and it does not track you.</li>
+      <li>Nothing is shared with or sold to anyone. The developer has no server that receives data from the app.</li>
+    </ul>
+
+    <h2>Who is responsible</h2>
+    <p>The app is developed and used by a private individual in Sweden, Daniel. Questions about these terms or about privacy are sent to the contact address at the end.</p>
+
+    <h2>What the app reads from Volvo Cars</h2>
+    <p>When you sign in with your Volvo ID and approve access, the app reads the following from api.volvocars.com:</p>
+    <ul>
+      <li>The list of cars (VIN) linked to your Volvo ID, so that the app knows which car to show if you have not entered a VIN yourself.</li>
+      <li>Fuel amount in litres.</li>
+      <li>Odometer in kilometres.</li>
+      <li>Engine status (running or stopped).</li>
+      <li>Tyre pressure warning level for each wheel (for example OK or low). The API does not give the actual pressure.</li>
+      <li>Trip statistics: average fuel consumption and distance to empty.</li>
+      <li>Battery charge level (percent). Permission to read it is registered for the app because the car is a plug-in hybrid, and Volvo's fuel data can include battery charge level for cars that use a battery. The app does not show the battery level today, and it is not saved.</li>
+      <li>The time when the car last reported each value.</li>
+    </ul>
+    <p>The values are the car's most recently uploaded values, not live data. The app fetches them every two minutes while the car display is open on the screen, and when you press Update. Nothing is fetched in the background. The app does not request access to position, doors, locks, climate or any command, and it cannot use them.</p>
+
+    <h2>Signing in</h2>
+    <p>Sign-in takes place on Volvo ID's own page in a browser tab. The app never sees your Volvo ID password. After sign-in, Volvo ID sends a one-time code back to the app. Depending on the setup, the code may pass through a simple forwarding web page published by the developer, which stores nothing. The code can only be used once, and only together with a secret value that exists only in the app (PKCE). The app then exchanges the code for access tokens at volvoid.eu.volvocars.com.</p>
+
+    <h2>What is stored on your phone</h2>
+    <ul>
+      <li>The VCC API key, client ID and client secret for the app, the redirect address and the selected permissions (scopes).</li>
+      <li>Access token and refresh token from Volvo ID, and when the access token expires.</li>
+      <li>The car's VIN.</li>
+      <li>Display settings, shortcuts and voice settings.</li>
+    </ul>
+    <p>All text values above, including tokens and keys, are encrypted with AES-256-GCM before they are saved. The encryption key is kept in the phone's Android Keystore and does not leave it. Vehicle values (fuel, odometer and so on) are kept only in memory while the app is running. App data backup is turned off, so nothing is copied to a cloud backup or to a new phone.</p>
+
+    <h2>Other phone functions</h2>
+    <ul>
+      <li>Location: GPS is used only to show your speed on the screen. Position is not saved and not sent anywhere.</li>
+      <li>Microphone: only when you press the microphone button. Speech is turned into text by your phone's built-in speech recognition service, which follows the terms of its provider (often Google). No vehicle data is sent with it. Replies are read aloud by the phone's text-to-speech engine.</li>
+      <li>Contacts: only if you say "call &lt;name&gt;". The name is looked up on the phone and the number is put in the phone's dialer. The app never makes the call itself.</li>
+      <li>Notifications, display over other apps and start at boot: only to open the car display when the phone is connected to the car.</li>
+    </ul>
+
+    <h2>Sharing</h2>
+    <p>No data is shared with, sold to or sent to any third party. The only network traffic with your data goes directly between the phone and Volvo Cars (api.volvocars.com and volvoid.eu.volvocars.com). Volvo Cars' processing of your data is governed by Volvo Cars' own privacy notices.</p>
+
+    <h2>Revoking access and deleting data</h2>
+    <ul>
+      <li>Sign out: in Settings, press "Koppla från" (Disconnect) and confirm. The sign-in tokens and any test key are deleted from the phone, and the app can no longer read data from the car. The API key, client ID and client secret stay on the phone (encrypted) until you clear the app's data.</li>
+      <li>Delete everything: clear the app's data in Android settings, or uninstall the app.</li>
+      <li>At Volvo: once the tokens are deleted, the access stops working by itself. According to Volvo's documentation, a refresh token that is not used within 7 days becomes invalid, and an approval lasts at most 6 months. Volvo's developer documentation does not describe a way to withdraw access for a single app in Volvo ID or the Volvo Cars app. If you want Volvo Cars to remove the approval earlier, contact Volvo Cars.</li>
+    </ul>
+    <p>Because the developer holds no data about you, there is nothing to delete on the developer's side.</p>
+
+    <h2>Limitation of liability</h2>
+    <p>The app is provided free of charge, as is and without any warranty. The values come from Volvo Cars and may be delayed, missing or wrong. Do not rely on the app for safety-related decisions. Always check fuel level, tyres and warnings in the car itself. Do not handle the phone while driving. As far as the law allows, the developer is not liable for any damage or loss caused by using the app or by data being wrong or unavailable.</p>
+
+    <h2>Not affiliated with Volvo Cars</h2>
+    <p>Volvo Billäge is an independent private project. It is not affiliated with, sponsored by or endorsed by Volvo Car Corporation. Volvo and Volvo On Call are trademarks of Volvo Car Corporation or its affiliates.</p>
+
+    <h2>Changes</h2>
+    <p>If the app's handling of data changes, these terms and the date above will be updated.</p>
+
+    <h2>Contact</h2>
+    <p><a href="mailto:winglink.apps@gmail.com">winglink.apps@gmail.com</a></p>
+  </main>
+</body>
+</html>
